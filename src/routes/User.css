@@ -1,3 +1,18 @@
 
 .normal {
 }
+.btn-green{
+    padding:2px;
+    color: #FFF;
+    background-color: #32c5d2;
+    border-color: #32c5d2
+}
+.btn-blue{
+    padding:2px;
+    color: #FFF;
+    background-color: #1c699f;
+    border-color: #15527c;
+}
+.mb5{
+    margin-bottom: 5px;
+}

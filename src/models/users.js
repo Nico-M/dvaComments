@@ -5,9 +5,8 @@ export default {
     list:[]
   },
   reducers: {
-    save(state,{payload:{list}}){
+    update(state,{payload:{list}}){
       return{list: [
-        ...state.list,
         ...list
       ]}
     }
@@ -17,10 +16,12 @@ export default {
       const {object}= yield call(usersService.fetch,option)
      
       yield put({
-        type:'save',
+        type:'update',
         payload:{list:object.list}
       })
     }
   },
-  subscriptions: {},
+  subscriptions: {
+    
+  },
 };

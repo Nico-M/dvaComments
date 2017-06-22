@@ -14,7 +14,7 @@ class User extends Component {
       type: 'users/fetch',
       payload: {
         method: 'POST',
-         url: 'crmContMain/list',
+        url: 'crmContMain/list',
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -22,12 +22,26 @@ class User extends Component {
       }
     })
   }
+  handleMoreClick(record, index,e) {
+    e.target.innerHTML=(e.target.innerHTML=="收起更多")?"查看更多>>":"收起更多"
+  }
   render() {
     const data = this.props.data
     const columns = [{
       title: '工具',
       dataIndex: 'name',
-      render: () => (<div><a style={{ marginRight: '5px' }} href="#">查看详情</a><a href="#">查看更多</a></div>),
+      render: (text, record, index) => (<div>
+        <a style={{ marginRight: '5px', display: 'inline-block' }}
+          className="btn-green mb5 "
+          href="#"
+
+        >查看详情</a>
+        <br />
+        <a href="javaScript:void 0"
+          className="btn-blue"
+          onClick={this.handleMoreClick.bind(this, record, index)}
+        >查看更多>></a>
+      </div>),
     }, {
       title: '合同编号',
       dataIndex: 'conno',
@@ -106,7 +120,12 @@ class User extends Component {
         <Main >
           <h1>合同列表</h1>
           <div className="ct_list">
-            <Table rowSelection={rowSelection} rowKey={(record) => record.conid} columns={columns} dataSource={data} />
+            <Table rowSelection={rowSelection}
+              bordered={true}
+              rowKey={(record) => record.conid}
+              onExpand={() => console.log(111)}
+              columns={columns}
+              dataSource={data} />
           </div>
         </Main>
       </div>
