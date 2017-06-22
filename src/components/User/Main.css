@@ -1,0 +1,26 @@
+
+.normal {
+}
+.header{
+    height:50px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    height: 50px;
+    min-height: 50px;
+    filter: none;
+    background-image: none;
+    background-color: #2b3643;
+}
+.container{
+     background: #333;
+     display: flex;
+}
+.sider{
+    width:235px;
+    
+}
+.content{
+    background: white; 
+}
